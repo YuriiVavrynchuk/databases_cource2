@@ -244,6 +244,75 @@ CREATE TABLE `animators_orders`.`animator_has_event` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+INSERT INTO `animators_orders`.`country` (`country`) VALUES ('Ukraine');
+INSERT INTO `animators_orders`.`country` (`country`) VALUES ('USA');
+INSERT INTO `animators_orders`.`country` (`country`) VALUES ('Uganda');
+INSERT INTO `animators_orders`.`country` (`country`) VALUES ('Portugal');
+INSERT INTO `animators_orders`.`country` (`country`) VALUES ('CumBodga');
+INSERT INTO `animators_orders`.`country` (`country`) VALUES ('Germany');
+
+INSERT INTO `animators_orders`.`animators_agency` (`name`, `address`, `workers_number`, `license`, `bank_account`, `registration_country`) VALUES ('TSUKAT', 'Bandera', '1000000', 'MIT', '911', '1');
+INSERT INTO `animators_orders`.`animators_agency` (`name`, `address`, `workers_number`, `license`, `bank_account`, `registration_country`) VALUES ('Microsoft', 'Bandera', '1000000', 'MIT', '911', '2');
+INSERT INTO `animators_orders`.`animators_agency` (`name`, `address`, `workers_number`, `license`, `bank_account`, `registration_country`) VALUES ('Apple', 'Bandera', '1000000', 'MIT', '911', '3');
+INSERT INTO `animators_orders`.`animators_agency` (`name`, `address`, `workers_number`, `license`, `bank_account`, `registration_country`) VALUES ('B2B', 'Bandera', '1000000', 'MIT', '911', '4');
+INSERT INTO `animators_orders`.`animators_agency` (`name`, `address`, `workers_number`, `license`, `bank_account`, `registration_country`) VALUES ('Veres inc', 'Bandera', '1000000', 'MIT', '911', '5');
+INSERT INTO `animators_orders`.`animators_agency` (`name`, `address`, `workers_number`, `license`, `bank_account`, `registration_country`) VALUES ('Vavrynchuk ink', 'Bandera', '1000000', 'MIT', '911', '6');
+
+INSERT INTO `animators_orders`.`animator` (`name`, `surname`, `age`, `gender`, `character`, `salary`, `experience`, `phone`, `email`) VALUES ('Yura', 'Vavryk', '100', 'Male', 'Luntik', '10000', '99', '911', 'veres');
+INSERT INTO `animators_orders`.`animator` (`name`, `surname`, `age`, `gender`, `character`, `salary`, `experience`, `phone`, `email`) VALUES ('Oleg', 'Vavryk', '10', 'Male', 'Cloun', '1000', '99', '911', 'veres');
+INSERT INTO `animators_orders`.`animator` (`name`, `surname`, `age`, `gender`, `character`, `salary`, `experience`, `phone`, `email`) VALUES ('Ivan', 'Vavryk', '1300', 'Male', 'BabaCapa', '103000', '99', '911', 'veres');
+INSERT INTO `animators_orders`.`animator` (`name`, `surname`, `age`, `gender`, `character`, `salary`, `experience`, `phone`, `email`) VALUES ('Stepan', 'Vavryk', '1600', 'Male', 'Stepan', '10080', '99', '911', 'veres');
+INSERT INTO `animators_orders`.`animator` (`name`, `surname`, `age`, `gender`, `character`, `salary`, `experience`, `phone`, `email`) VALUES ('George', 'Vavryk', '150', 'Male', 'Yurtan', '1400', '99', '911', 'veres');
+INSERT INTO `animators_orders`.`animator` (`name`, `surname`, `age`, `gender`, `character`, `salary`, `experience`, `phone`, `email`) VALUES ('Punec', 'Vavryk', '1001', 'Male', 'Gopa', '10030', '99', '911', 'veres');
+
+INSERT INTO `animators_orders`.`animators_agency_has_animator` (`animators_agency_business_id`, `animator_id`) VALUES ('1', '1');
+INSERT INTO `animators_orders`.`animators_agency_has_animator` (`animators_agency_business_id`, `animator_id`) VALUES ('2', '2');
+INSERT INTO `animators_orders`.`animators_agency_has_animator` (`animators_agency_business_id`, `animator_id`) VALUES ('3', '3');
+INSERT INTO `animators_orders`.`animators_agency_has_animator` (`animators_agency_business_id`, `animator_id`) VALUES ('4', '4');
+INSERT INTO `animators_orders`.`animators_agency_has_animator` (`animators_agency_business_id`, `animator_id`) VALUES ('5', '5');
+INSERT INTO `animators_orders`.`animators_agency_has_animator` (`animators_agency_business_id`, `animator_id`) VALUES ('6', '6');
+
+INSERT INTO `animators_orders`.`client_account` (`name`, `surname`, `age`, `gender`, `phone`, `email`, `debt`, `bonuses`, `blacklist_presence`, `animators_agency_business_id`) VALUES ('Yura', 'Vavryk', '100', 'Male', '02', 'veres', '1000', '0', '1', '1');
+INSERT INTO `animators_orders`.`client_account` (`name`, `surname`, `age`, `gender`, `phone`, `email`, `debt`, `bonuses`, `blacklist_presence`, `animators_agency_business_id`) VALUES ('Oleg', 'Vavryk', '10', 'Male', '02', 'veres', '1000', '0', '1', '2');
+INSERT INTO `animators_orders`.`client_account` (`name`, `surname`, `age`, `gender`, `phone`, `email`, `debt`, `bonuses`, `blacklist_presence`, `animators_agency_business_id`) VALUES ('Ivan', 'Vavryk', '1300', 'Male', '02', 'veres', '1000', '0', '1', '3');
+INSERT INTO `animators_orders`.`client_account` (`name`, `surname`, `age`, `gender`, `phone`, `email`, `debt`, `bonuses`, `blacklist_presence`, `animators_agency_business_id`) VALUES ('Stepan', 'Vavryk', '1600', 'Male', '02', 'veres', '1000', '0', '1', '4');
+INSERT INTO `animators_orders`.`client_account` (`name`, `surname`, `age`, `gender`, `phone`, `email`, `debt`, `bonuses`, `blacklist_presence`, `animators_agency_business_id`) VALUES ('George', 'Vavryk', '150', 'Male', '02', 'veres', '1000', '0', '1', '5');
+INSERT INTO `animators_orders`.`client_account` (`name`, `surname`, `age`, `gender`, `phone`, `email`, `debt`, `bonuses`, `blacklist_presence`, `animators_agency_business_id`) VALUES ('Punec', 'Vavryk', '1001', 'Male', '02', 'veres', '1000', '0', '1', '6');
+
+INSERT INTO `animators_orders`.`event` (`title`, `subject`, `guests_number`, `address`, `date_start`, `date_end`, `time_start`, `time_end`) VALUES ('Donbass', 'NY', '10000', 'Bandera', '2014-10-23 10:37:22', '2021-10-23 10:37:22', '00:00:00', '00:00:00');
+INSERT INTO `animators_orders`.`event` (`title`, `subject`, `guests_number`, `address`, `date_start`, `date_end`, `time_start`, `time_end`) VALUES ('Uganda', 'NY', '10000', 'Bandera', '2014-10-23 10:37:22', '2021-10-23 10:37:22', '00:00:00', '00:00:00');
+INSERT INTO `animators_orders`.`event` (`title`, `subject`, `guests_number`, `address`, `date_start`, `date_end`, `time_start`, `time_end`) VALUES ('Corporatyv', 'NY', '10000', 'Bandera', '2014-10-23 10:37:22', '2021-10-23 10:37:22', '00:00:00', '00:00:00');
+INSERT INTO `animators_orders`.`event` (`title`, `subject`, `guests_number`, `address`, `date_start`, `date_end`, `time_start`, `time_end`) VALUES ('Vypusknii', 'NY', '10000', 'Bandera', '2014-10-23 10:37:22', '2021-10-23 10:37:22', '00:00:00', '00:00:00');
+INSERT INTO `animators_orders`.`event` (`title`, `subject`, `guests_number`, `address`, `date_start`, `date_end`, `time_start`, `time_end`) VALUES ('Orgic', 'NY', '10000', 'Bandera', '2014-10-23 10:37:22', '2021-10-23 10:37:22', '00:00:00', '00:00:00');
+INSERT INTO `animators_orders`.`event` (`title`, `subject`, `guests_number`, `address`, `date_start`, `date_end`, `time_start`, `time_end`) VALUES ('Orgic', 'NY', '10000', 'Bandera', '2014-10-23 10:37:22', '2021-10-23 10:37:22', '00:00:00', '00:00:00');
+
+INSERT INTO `animators_orders`.`animator_has_event` (`animator_id`, `event_id`) VALUES ('1', '1');
+INSERT INTO `animators_orders`.`animator_has_event` (`animator_id`, `event_id`) VALUES ('2', '2');
+INSERT INTO `animators_orders`.`animator_has_event` (`animator_id`, `event_id`) VALUES ('3', '3');
+INSERT INTO `animators_orders`.`animator_has_event` (`animator_id`, `event_id`) VALUES ('4', '4');
+INSERT INTO `animators_orders`.`animator_has_event` (`animator_id`, `event_id`) VALUES ('5', '5');
+INSERT INTO `animators_orders`.`animator_has_event` (`animator_id`, `event_id`) VALUES ('6', '6');
+
+INSERT INTO `animators_orders`.`order` (`order_datetime`, `client`, `price`, `amount_of_animators`, `subject`, `event_id`, `client_account_id`, `animators_agency_business_id`) VALUES ('2008-10-23 10:37:22', 'Yur3a', '100', '1300', 'Pop', '1', '1', '1');
+INSERT INTO `animators_orders`.`order` (`order_datetime`, `client`, `price`, `amount_of_animators`, `subject`, `event_id`, `client_account_id`, `animators_agency_business_id`) VALUES ('2008-10-23 10:37:23', 'Yur4a', '120', '1300', 'Rock', '2', '2', '2');
+INSERT INTO `animators_orders`.`order` (`order_datetime`, `client`, `price`, `amount_of_animators`, `subject`, `event_id`, `client_account_id`, `animators_agency_business_id`) VALUES ('2008-10-23 10:37:24', 'Yur5a', '10', '1300', 'Podp', '3', '3', '3');
+INSERT INTO `animators_orders`.`order` (`order_datetime`, `client`, `price`, `amount_of_animators`, `subject`, `event_id`, `client_account_id`, `animators_agency_business_id`) VALUES ('2008-10-23 10:37:25', 'Yur6a', '1020', '1300', 'Psop', '4', '4', '4');
+INSERT INTO `animators_orders`.`order` (`order_datetime`, `client`, `price`, `amount_of_animators`, `subject`, `event_id`, `client_account_id`, `animators_agency_business_id`) VALUES ('2008-10-23 10:37:26', 'Yur7a', '1010', '1300', 'Pops', '5', '5', '5');
+INSERT INTO `animators_orders`.`order` (`order_datetime`, `client`, `price`, `amount_of_animators`, `subject`, `event_id`, `client_account_id`, `animators_agency_business_id`) VALUES ('2008-10-23 10:37:27', 'Yur38a', '1100', '1300', 'Podp', '6', '6', '6');
+
+INSERT INTO `animators_orders`.`bill` (`client`, `bill_datetime`, `animators_number`, `perfomance_duration`, `price`, `organizer`, `order_id`) VALUES ('Yura', '2008-10-23 10:37:22', '100', '100', '1000', 'Yura', '1');
+INSERT INTO `animators_orders`.`bill` (`client`, `bill_datetime`, `animators_number`, `perfomance_duration`, `price`, `organizer`, `order_id`) VALUES ('Oleg', '2008-10-23 10:37:23', '100', '100', '1000', 'Yura', '2');
+INSERT INTO `animators_orders`.`bill` (`client`, `bill_datetime`, `animators_number`, `perfomance_duration`, `price`, `organizer`, `order_id`) VALUES ('Ivan', '2008-10-23 10:37:24', '100', '100', '1000', 'Yura', '3');
+INSERT INTO `animators_orders`.`bill` (`client`, `bill_datetime`, `animators_number`, `perfomance_duration`, `price`, `organizer`, `order_id`) VALUES ('Stepan', '2008-10-23 10:37:25', '100', '100', '1000', 'Yura', '4');
+INSERT INTO `animators_orders`.`bill` (`client`, `bill_datetime`, `animators_number`, `perfomance_duration`, `price`, `organizer`, `order_id`) VALUES ('George', '2008-10-23 10:37:26', '100', '100', '1000', 'Yura', '5');
+INSERT INTO `animators_orders`.`bill` (`client`, `bill_datetime`, `animators_number`, `perfomance_duration`, `price`, `organizer`, `order_id`) VALUES ('Punec', '2008-10-23 10:37:27', '100', '100', '1000', 'Yura', '6');
+
+INSERT INTO `animators_orders`.`feedback` (`client`, `date`, `text`, `rate`, `event_id`, `client_account_id`) VALUES ('Yura', '2008-10-23 10:37:22', 'VERY GOOD EVENT I AM VERY HEPPY!!!!', '100', '1', '1');
+INSERT INTO `animators_orders`.`feedback` (`client`, `date`, `text`, `rate`, `event_id`, `client_account_id`) VALUES ('Oleg', '2008-10-23 10:37:23', 'VERY GOOD EVENT I AM VERY HEPPY!!!!', '100', '2', '2');
+INSERT INTO `animators_orders`.`feedback` (`client`, `date`, `text`, `rate`, `event_id`, `client_account_id`) VALUES ('Ivan', '2008-10-23 10:37:24', 'VERY GOOD EVENT I AM VERY HEPPY!!!!', '100', '3', '3');
+INSERT INTO `animators_orders`.`feedback` (`client`, `date`, `text`, `rate`, `event_id`, `client_account_id`) VALUES ('Stepan', '2008-10-23 10:37:25', 'VERY GOOD EVENT I AM VERY HEPPY!!!!', '100', '4', '4');
+INSERT INTO `animators_orders`.`feedback` (`client`, `date`, `text`, `rate`, `event_id`, `client_account_id`) VALUES ('George', '2008-10-23 10:37:26', 'VERY GOOD EVENT I AM VERY HEPPY!!!!', '100', '5', '5');
+INSERT INTO `animators_orders`.`feedback` (`client`, `date`, `text`, `rate`, `event_id`, `client_account_id`) VALUES ('Punec', '2008-10-23 10:37:27', 'VERY GOOD EVENT I AM VERY HEPPY!!!!', '100', '6', '6');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
