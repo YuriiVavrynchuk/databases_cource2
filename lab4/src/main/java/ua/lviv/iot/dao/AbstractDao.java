@@ -1,15 +1,27 @@
 package ua.lviv.iot.dao;
 
-import java.util.*;
+import java.sql.SQLException;
+import java.util.List;
 
-public interface AbstractDao<T, K> {
-    List<T> findAll();
+public interface AbstractDao<E> {
+    List<E> findAll() throws SQLException;
 
-    T findById(K id);
+    default E findById(Integer id) throws SQLException {
+        return null;
+    }
 
-    int create(T entity);
+    default void create(E entity) throws SQLException {}
 
-    int update(T entity);
+    default void update(Integer id, E entity) throws SQLException {}
 
-    int delete(K id);
+    default void delete(Integer id) throws SQLException {}
+
+
+    default E findByLogin(String login) throws SQLException {
+        return null;
+    }
+
+    default void update(String login, E entity) throws SQLException {}
+
+    default void delete(String login) throws SQLException {}
 }
