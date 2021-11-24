@@ -1,15 +1,27 @@
 package ua.lviv.iot.service;
 
-import java.util.*;
+import java.sql.SQLException;
+import java.util.List;
 
-public interface AbstractService<T, K> {
-    List<T> findAll();
+public interface AbstractService<E> {
+    List<E> findAll() throws SQLException;
 
-    T findById(K id);
+    default E findById(Integer id) throws SQLException {
+        return null;
+    }
 
-    T create(T entity);
+    default void create(E entity) throws SQLException {}
 
-    T update(K id, T entity);
+    default void update(Integer id, E entity) throws SQLException {}
 
-    T delete(K id);
+    default void delete(Integer id) throws SQLException {}
+
+
+    default E findByLogin(String login) throws SQLException {
+        return null;
+    }
+
+    default void update(String login, E entity) throws SQLException {}
+
+    default void delete(String login) throws SQLException {}
 }

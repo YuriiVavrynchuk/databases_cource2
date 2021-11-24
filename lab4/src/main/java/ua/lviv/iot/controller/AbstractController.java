@@ -1,15 +1,32 @@
 package ua.lviv.iot.controller;
 
-import java.util.*;
+import java.sql.SQLException;
+import java.util.List;
 
-public interface AbstractController<T, K> {
-    List<T> findAll();
+public interface AbstractController<E> {
 
-    T findById(K id);
+    List<E> findAll() throws SQLException;
 
-    T create(T entity);
+    default E findById(Integer id) throws SQLException {
+        return null;
+    }
 
-    T update(K id, T entity);
+    default void create(E entity) throws SQLException {
+    }
 
-    T delete(K id);
+    default void update(Integer id, E entity) throws SQLException {
+    }
+
+    default void delete(Integer id) throws SQLException {
+    }
+
+    default E findByLogin(String login) throws SQLException {
+        return null;
+    }
+
+    default void update(String login, E entity) throws SQLException {
+    }
+
+    default void delete(String login) throws SQLException {
+    }
 }
