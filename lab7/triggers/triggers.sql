@@ -9,7 +9,7 @@ CREATE TRIGGER password_delete
 BEFORE DELETE
 ON password_table FOR EACH ROW
 BEGIN
-	IF (password_table.id IN (SELECT password_id FROM user_table))
+	IF (old.id IN (SELECT password_id FROM user_table))
 		THEN SIGNAL SQLSTATE "45000"
 			SET MESSAGE_TEXT = "Cannot delete password, some user still have fk to password";
     END IF;
@@ -23,7 +23,7 @@ CREATE TRIGGER password_update
 BEFORE UPDATE
 ON password_table FOR EACH ROW
 BEGIN
-	IF (password_table.id IN (SELECT password_id FROM user_table))
+	IF (old.id IN (SELECT password_id FROM user_table))
 		THEN SIGNAL SQLSTATE "45000"
 			SET MESSAGE_TEXT = "Cannot update password, some user still have fk to password";
     END IF;
@@ -39,7 +39,7 @@ CREATE TRIGGER book_email_delete
 BEFORE DELETE
 ON reference_table FOR EACH ROW
 BEGIN
-	IF (reference_table.book_email IN (SELECT book_email FROM book_table))
+	IF (old.book_email IN (SELECT book_email FROM book_table))
 		THEN SIGNAL SQLSTATE "45000"
 			SET MESSAGE_TEXT = "Cannot delete book email, some user still have fk to book";
     END IF;
@@ -53,7 +53,7 @@ CREATE TRIGGER book_email_update
 BEFORE UPDATE
 ON reference_table FOR EACH ROW
 BEGIN
-	IF (reference_table.book_email IN (SELECT book_email FROM book_table))
+	IF (old.book_email IN (SELECT book_email FROM book_table))
 		THEN SIGNAL SQLSTATE "45000"
 			SET MESSAGE_TEXT = "Cannot update book email, some user still have fk to book";
     END IF;
@@ -69,7 +69,7 @@ CREATE TRIGGER catalog_delete
 BEFORE DELETE
 ON catalog_table FOR EACH ROW
 BEGIN
-	IF (catalog_table.topic IN (SELECT topic FROM book_table))
+	IF (old.topic IN (SELECT topic FROM book_table))
 		THEN SIGNAL SQLSTATE "45000"
 			SET MESSAGE_TEXT = "Cannot delete topic, some book still have fk to topic";
     END IF;
@@ -83,7 +83,7 @@ CREATE TRIGGER catalog_update
 BEFORE UPDATE
 ON catalog_table FOR EACH ROW
 BEGIN
-	IF (catalog_table.topic IN (SELECT topic FROM book_table))
+	IF (old.topic IN (SELECT topic FROM book_table))
 		THEN SIGNAL SQLSTATE "45000"
 			SET MESSAGE_TEXT = "Cannot update topic, some book still have fk to topic";
     END IF;
@@ -99,7 +99,7 @@ CREATE TRIGGER book_delete
 BEFORE DELETE
 ON book_table FOR EACH ROW
 BEGIN
-	IF (book_table.id IN (SELECT book_id FROM book_user_table))
+	IF (old.id IN (SELECT book_id FROM book_user_table))
 		THEN SIGNAL SQLSTATE "45000"
 			SET MESSAGE_TEXT = "Cannot delete book, some user(s) still have fk to book";
     END IF;
@@ -113,7 +113,7 @@ CREATE TRIGGER book_update
 BEFORE DELETE
 ON book_table FOR EACH ROW
 BEGIN
-	IF (book_table.id IN (SELECT book_id FROM book_user_table))
+	IF (old.id IN (SELECT book_id FROM book_user_table))
 		THEN SIGNAL SQLSTATE "45000"
 			SET MESSAGE_TEXT = "Cannot update book, some user(s) still have fk to book";
     END IF;
@@ -129,7 +129,7 @@ CREATE TRIGGER user_delete
 BEFORE DELETE
 ON user_table FOR EACH ROW
 BEGIN
-	IF (user_table.id IN (SELECT user_id FROM book_user_table))
+	IF (old.id IN (SELECT user_id FROM book_user_table))
 		THEN SIGNAL SQLSTATE "45000"
 			SET MESSAGE_TEXT = "Cannot delete user, some book(s) still have fk to user";
     END IF;
@@ -143,7 +143,7 @@ CREATE TRIGGER user_update
 BEFORE DELETE
 ON user_table FOR EACH ROW
 BEGIN
-	IF (user_table.id IN (SELECT user_id FROM book_user_table))
+	IF (old.id IN (SELECT user_id FROM book_user_table))
 		THEN SIGNAL SQLSTATE "45000"
 			SET MESSAGE_TEXT = "Cannot update user, some book(s) still have fk to user";
     END IF;
