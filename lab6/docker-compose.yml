@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    env_file:
+      - ./.env
+    ports:
+      - "3306:3306"
+
+  animator-orders-image:
+    build: .
+    image: yuriivavrynchuk/animator-orders-image
+    container_name: animator-orders-image
+    env_file:
+      - ./.env
+    depends_on:
+      - mysql
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
